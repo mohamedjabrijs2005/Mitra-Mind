@@ -131,16 +131,18 @@ export function ChatClient() {
             <AlertDialog open={isCrisisAlertOpen} onOpenChange={setIsCrisisAlertOpen}>
                 <AlertDialogContent>
                     <AlertDialogHeader>
-                    <AlertDialogTitle>Immediate Support Needed?</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        <div>It seems like you might be in distress. Please reach out to a professional who can support you. Here are some resources that can help right now:</div>
-                        <ul className="list-disc pl-5 mt-2 space-y-1">
-                            <li><strong>AASRA:</strong> <a href="tel:+919820466726" className="underline">+91-9820466726</a></li>
-                            <li><strong>Vandrevala Foundation:</strong> <a href="tel:18602662345" className="underline">1860-2662-345</a> or <a href="tel:18002333330" className="underline">1800-2333-330</a></li>
-                            <li><strong>iCALL:</strong> <a href="tel:02225521111" className="underline">022-25521111</a></li>
-                        </ul>
-                        <div className="mt-2">If you are in immediate danger, please call your local emergency services.</div>
-                    </AlertDialogDescription>
+                        <AlertDialogTitle>Immediate Support Needed?</AlertDialogTitle>
+                        <AlertDialogDescription asChild>
+                            <div>
+                                <p>It seems like you might be in distress. Please reach out to a professional who can support you. Here are some resources that can help right now:</p>
+                                <ul className="list-disc pl-5 mt-2 space-y-1">
+                                    <li><strong>AASRA:</strong> <a href="tel:+919820466726" className="underline">+91-9820466726</a></li>
+                                    <li><strong>Vandrevala Foundation:</strong> <a href="tel:18602662345" className="underline">1860-2662-345</a> or <a href="tel:18002333330" className="underline">1800-2333-330</a></li>
+                                    <li><strong>iCALL:</strong> <a href="tel:02225521111" className="underline">022-25521111</a></li>
+                                </ul>
+                                <p className="mt-2">If you are in immediate danger, please call your local emergency services.</p>
+                            </div>
+                        </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogAction onClick={() => setIsCrisisAlertOpen(false)}>
