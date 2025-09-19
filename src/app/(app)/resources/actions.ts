@@ -8,7 +8,16 @@ const schema = z.object({
   userLocation: z.string().optional(),
 });
 
-export async function getResourcesAction(prevState: any, formData: FormData) {
+type State = {
+    message: string;
+    resources: string[];
+    errors: {
+        userInput?: string[];
+        userLocation?: string[];
+    } | null;
+}
+
+export async function getResourcesAction(prevState: State, formData: FormData): Promise<State> {
   const validatedFields = schema.safeParse({
     userInput: formData.get('userInput'),
     userLocation: formData.get('userLocation'),

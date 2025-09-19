@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { getResourcesAction } from "@/app/(app)/resources/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,7 +13,7 @@ import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 
 const initialState = {
   message: "",
-  resources: [],
+  resources: [] as string[],
   errors: null,
 };
 
@@ -27,7 +28,7 @@ function SubmitButton() {
 }
 
 export function ResourceNavigatorClient() {
-  const [state, formAction] = useFormState(getResourcesAction, initialState);
+  const [state, formAction] = useActionState(getResourcesAction, initialState);
 
   return (
     <div className="space-y-8">
