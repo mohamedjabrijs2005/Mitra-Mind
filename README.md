@@ -1,4 +1,4 @@
-# Firebase Studio
+# MitraMind
 
 This is a NextJS starter in Firebase Studio.
 
